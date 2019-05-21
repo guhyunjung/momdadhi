@@ -16,7 +16,7 @@ class BbsRepositoryImpl : BbsRepositoryCustom {
 	override fun selectMemberList(): ArrayList<MemberEntity>? {
 		var memberEntity: QMemberEntity = QMemberEntity.memberEntity
 		var codeEntity: QCodeEntity = QCodeEntity.codeEntity
-		//var codeSubcodeEntity: QSubcodeEntity.sub
+
 		return queryFactory.selectFrom(memberEntity)
 			.leftJoin(memberEntity.codeEntity, codeEntity).fetch() as ArrayList<MemberEntity>?
 	}
